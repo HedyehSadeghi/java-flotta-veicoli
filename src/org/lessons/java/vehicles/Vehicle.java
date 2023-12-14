@@ -20,7 +20,7 @@ public abstract class Vehicle {
         return registrationDate;
     }
 
-    public void setPlate(int plate)throws  IllegalArgumentException {
+    public void setPlate(int plate) throws IllegalArgumentException {
         validatePlate(plate);
         this.plate = plate;
     }
@@ -32,15 +32,26 @@ public abstract class Vehicle {
     @Override
     public abstract String toString();
 
-    public void validatePlate(int plate) throws  IllegalArgumentException{
-        if (plate<100){
+    public void validatePlate(int plate) throws IllegalArgumentException {
+        if (plate < 100) {
             throw new IllegalArgumentException("plate must be higher than 100");
         }
     }
 
 
-
-
+    @Override
+    public boolean equals(Object obj) {
+        if (obj == this) {
+            return true;
+        }
+        if (obj == null || !(obj instanceof Vehicle)) {
+            return false;
+        }
+        // cast the object to a Vehicle instance
+        Vehicle other = (Vehicle) obj;
+        // compare the plate values
+        return Integer.valueOf(this.plate).equals(Integer.valueOf(other.plate));
+    }
 
 }
 

@@ -18,8 +18,13 @@ public class GestoreFlotta {
         this.vehicleList = vehicleList;
     }
 
-    public void addVehicle(Vehicle vehicle){
-        vehicleList.add(vehicle);
+    public void addVehicle(Vehicle vehicleToAdd) throws IllegalArgumentException{
+        for (Vehicle vehicle: vehicleList) {
+            if(vehicle.equals(vehicleToAdd)){
+                throw new IllegalArgumentException("can't add this vehicle: plate already existing");
+            }
+        }
+        vehicleList.add(vehicleToAdd);
     }
 
     public int countVehicleTypeCar(){
@@ -64,6 +69,6 @@ public class GestoreFlotta {
     }
 
 
-//trovare un veicolo specifico tramite il numero di targa
+
     //BONUS: non deve essere possibile aggiungere 2 veicoli con la stessa targa; in questo caso il sistema deve restituire un messaggio di errore
 }
