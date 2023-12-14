@@ -20,6 +20,6 @@ public class Motorcycle extends Vehicle {
 
     @Override
     public String toString() {
-        return "motorcycle plate number: "+ super.getPlate()+ " date: " + super.getRegistrationDate()+ "kick-stand: "+ (kickStand? "yes": "no");
+        return "motorcycle plate number: "+ super.getPlate()+ " date: " + super.getRegistrationDate()+ " kick-stand: "+ (kickStand? "yes": "no");
     }
 }

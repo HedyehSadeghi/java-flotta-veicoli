@@ -68,6 +68,25 @@ public class Main {
             }
         }
 
+        System.out.println("i chose a car and added it to your list. your new list is:");
+        Car car2= new Car(12343,LocalDate.parse("2020-12-12"),4);
+        vehicleOrganization.addVehicle(car2);
+        System.out.println(vehicleOrganization);
+        System.out.println("in your list there are "+ vehicleOrganization.countVehicleTypeCar() +" cars and "+ vehicleOrganization.countVehicleTypeMotorcycle() +" motorcycles");
+
+        System.out.println("i can find data through the plate: 12343");
+        System.out.println(vehicleOrganization.vehicleInformationsByPlate(12343));
+        System.out.println("if you wanna find a vehicle by plate press 1, press anything else to exit");
+        String choice= scanner.nextLine();
+        if (choice.equals("1")) {
+            System.out.print("type your plate (int): ");
+            int plateToLookFor = Integer.parseInt(scanner.nextLine());
+            System.out.println(vehicleOrganization.vehicleInformationsByPlate(plateToLookFor));
+        } else {
+            System.out.println("bye");
+        }
+
+
 
 
 

@@ -45,6 +45,24 @@ public class GestoreFlotta {
         return string;
     }
 
+    public String vehicleInformationsByPlate(int plate){
+        boolean found= false;
+        Vehicle vehicleFound= null;
+        for (Vehicle vehicle: vehicleList) {
+            if (vehicle.getPlate()==plate){
+                found=true;
+                vehicleFound= vehicle;
+            }
+        }
+        if (found){
+            return vehicleFound.toString();
+        }
+        else {
+            return "no vehicle found with this plate";
+        }
+
+    }
+
 
 //trovare un veicolo specifico tramite il numero di targa
     //BONUS: non deve essere possibile aggiungere 2 veicoli con la stessa targa; in questo caso il sistema deve restituire un messaggio di errore
