@@ -6,7 +6,8 @@ public abstract class Vehicle {
     private int plate;
     private LocalDate registrationDate;
 
-    public Vehicle(int plate, LocalDate registrationDate) {
+    public Vehicle(int plate, LocalDate registrationDate) throws IllegalArgumentException {
+        validatePlate(plate);
         this.plate = plate;
         this.registrationDate = registrationDate;
     }
@@ -19,7 +20,8 @@ public abstract class Vehicle {
         return registrationDate;
     }
 
-    public void setPlate(int plate) {
+    public void setPlate(int plate)throws  IllegalArgumentException {
+        validatePlate(plate);
         this.plate = plate;
     }
 
@@ -29,4 +31,17 @@ public abstract class Vehicle {
 
     @Override
     public abstract String toString();
+
+    public void validatePlate(int plate) throws  IllegalArgumentException{
+        if (plate<100){
+            throw new IllegalArgumentException("plate must be higher than 100");
+        }
+    }
+
+
+
+
+
 }
+
+

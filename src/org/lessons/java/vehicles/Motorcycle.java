@@ -22,4 +22,6 @@ public class Motorcycle extends Vehicle {
     public String toString() {
         return "motorcycle plate number: "+ super.getPlate()+ " date: " + super.getRegistrationDate()+ " kick-stand: "+ (kickStand? "yes": "no");
     }
+
+
 }
