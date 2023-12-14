@@ -19,10 +19,8 @@ public class GestoreFlotta {
     }
 
     public void addVehicle(Vehicle vehicleToAdd) throws IllegalArgumentException{
-        for (Vehicle vehicle: vehicleList) {
-            if(vehicle.equals(vehicleToAdd)){
-                throw new IllegalArgumentException("can't add this vehicle: plate already existing");
-            }
+        if(vehicleList.contains(vehicleToAdd)){
+            throw new IllegalArgumentException("can't add this vehicle: already existing");
         }
         vehicleList.add(vehicleToAdd);
     }
